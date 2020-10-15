@@ -1,0 +1,47 @@
+@model PAGINAS.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Estudiante";
+}
+
+<div class="row">
+    <div class="col-md-4">  
+        <h1 class="display-4">Estudiante</h1>
+        <form asp-controller="Estudiante" asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>    
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>    
+
+              <label>Curso</label>
+            <select asp-for="Acccion">
+                <option >Matematica</option>
+                <option >Talleres</option>
+                <option >Programacion</option>
+                <option >Software</option>
+                <option >Investigacion</option>
+                <option >Proyectos</option>
+                <option >Ecuaciones Diferenciales</option>
+                <option >Algoritmos</option>
+                <option >Estadística</option>
+            </select>
+            <br/>         
+
+            <div class="form-group">
+                 <button type="submit" class="btn btn-warning">Registrar</button> 
+            </div>                
+
+        </form>
+            
+        <td>@Html.DisplayTextFor(model => model.Response)</td>    
+    
+    </div>
+</div>
